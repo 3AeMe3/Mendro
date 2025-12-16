@@ -2,9 +2,9 @@ import { CircleArrowRight } from 'lucide-react';
 
 export default function AboutUs() {
   return (
-    <section className="h-screen bg-[#111111] px-10 pt-30 text-white">
+    <section className="bg-[#111111] pt-30 text-white">
       <div className="flex justify-end gap-10">
-        <span>Whas is</span>
+        <span>What is</span>
         <span>MENDRO</span>
       </div>
       <div className="flex gap-30">
