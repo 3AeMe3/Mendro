@@ -7,13 +7,13 @@ export default function Hero() {
   //   }, []);
 
   return (
-    <section className="flex h-screen justify-between gap-10 bg-[#d0e4e9] px-10 pt-30">
+    <section className="hero-section flex items-center justify-between gap-10">
       <div className="w-2xl">
         <h1 className="w-xl scale-y-115 text-8xl leading-19 font-extrabold -tracking-wide">
           digital fashion is a new chapter
         </h1>
 
-        <p className="mt-25 w-xl font-medium">
+        <p className="mt-25 w-sm text-start text-sm font-medium">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis id atque amet modi officiis
           quo. Nobis libero velit, placeat nostrum maiores dignissimos cupiditate incidunt provident
           eveniet cum omnis ut asperiores!
