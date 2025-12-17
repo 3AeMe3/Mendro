@@ -10,7 +10,6 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-/* From Uiverse.io by alexmaracinaru */
 button {
   cursor: pointer;
   font-weight: 700;
@@ -36,6 +35,11 @@ button > svg {
 
 button:hover svg {
   transform: translateX(5px);
+  fill: black;
+
+  .arrow {
+    fill: white;
+  }
 }
 
 button:active {
@@ -57,5 +61,10 @@ button:active {
   section {
     height: 100vh;
     padding: 4rem 5rem;
+  }
+
+  .title {
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
   }
 }
