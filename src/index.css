@@ -58,13 +58,20 @@ button:active {
 }
 
 @layer components {
-  section {
-    height: 100vh;
-    padding: 4rem 5rem;
-  }
-
   .title {
     font-family: 'Playfair Display', serif;
     text-transform: uppercase;
+  }
+  .select-disable {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  section {
+    height: 100vh;
+    padding: 4rem 5rem;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 }
