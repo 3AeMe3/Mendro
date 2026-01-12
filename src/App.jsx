@@ -1,16 +1,23 @@
+import { useState } from 'react';
+import { LoadingCtx } from './components/Loading/LoadingContext';
+
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
 import Clothing from './components/Clothing';
 import Footer from './components/Footer';
+import FadingPage from './components/FadingPage';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger, SplitText, ScrollSmoother } from 'gsap/all';
 import { useGSAP } from '@gsap/react';
-import FadingPage from './components/FadingPage';
+import WeAre from './components/WeAre';
+import { useEffect } from 'react';
 gsap.registerPlugin(ScrollTrigger, SplitText, ScrollSmoother);
 
 function App() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   useGSAP(() => {
     ScrollSmoother.create({
       wrapper: '.smooth-wrapper',
@@ -20,16 +27,31 @@ function App() {
     });
   }, []);
 
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      window.scrollTo(0, 0);
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
+
   return (
     <div className="smooth-wrapper">
-      <div className="smooth-content relative">
-        <FadingPage />
+      <LoadingCtx value={{ isLoaded, setIsLoaded }} className="smooth-content relative">
         <Navbar />
-        <Hero />
-        <AboutUs />
-        <Clothing />
-        <Footer />
-      </div>
+        <div className="smooth-content relative">
+          <FadingPage />
+          <Hero />
+          <AboutUs />
+          <Clothing />
+          <WeAre />
+          <Footer />
+        </div>
+      </LoadingCtx>
     </div>
   );
 }

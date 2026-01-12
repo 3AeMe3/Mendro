@@ -1,8 +1,11 @@
+import { useContext } from 'react';
+import { LoadingCtx } from './Loading/LoadingContext';
+
 import { gsap } from 'gsap/all';
-import { useState } from 'react';
 import { useGSAP } from '@gsap/react';
+
 export default function FadingPage() {
-  const [isDone, setIsDone] = useState(false);
+  const { isLoaded, setIsLoaded } = useContext(LoadingCtx);
 
   useGSAP(() => {
     gsap.fromTo(
@@ -20,7 +23,7 @@ export default function FadingPage() {
           gsap.to('#overlay', {
             opacity: 0,
             duration: 0.6,
-            onComplete: () => setIsDone(true),
+            onComplete: () => setIsLoaded(true),
           });
         },
       }
@@ -29,9 +32,9 @@ export default function FadingPage() {
 
   return (
     <>
-      {!isDone && (
+      {!isLoaded && (
         <div id="overlay" className="absolute inset-0 z-1000 h-screen bg-[#1f1d1d]">
-          <div id="panel" className="w-full bg-[#d7e5e6]"></div>
+          <div id="panel" className="w-full bg-white"></div>
         </div>
       )}
     </>
