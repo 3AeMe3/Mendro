@@ -20,7 +20,7 @@ body {
     user-select: none;
   }
   section {
-    @apply h-screen w-full bg-[#f2edeb] px-5 py-5 xl:px-9.5 xl:py-20;
+    @apply h-screen w-full bg-[#f2edeb] px-5 py-5 xl:px-25 xl:py-20;
   }
   body {
     color: #221f20;

@@ -10,7 +10,6 @@ export default function WeAre() {
   const titleText = useRef(null);
   const expertice = useRef(null);
 
-  console.log(isLoaded);
   useGSAP(() => {
     if (!isLoaded) return;
 
@@ -18,7 +17,7 @@ export default function WeAre() {
     let experticeSplit = SplitText.create(expertice.current, { type: 'words' });
 
     gsap.from(titleSplit.words, {
-      y: -50,
+      y: 50,
       opacity: 0,
       stagger: 0.2,
       ease: 'power1.out',

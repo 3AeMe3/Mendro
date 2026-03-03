@@ -9,25 +9,19 @@ export default function Footer() {
         <nav>
           <ul className="flex flex-col items-center space-y-2 text-sm tracking-wide">
             <li>
-              <a href="" className="transition hover:text-gray-300">
-                HOME
-              </a>
+              <a href="#">HOME</a>
             </li>
             <li>
-              <a href="" className="transition hover:text-gray-300">
-                ABOUT
-              </a>
+              <a href="#">ABOUT</a>
             </li>
             <li>
-              <a href="" className="transition hover:text-gray-300">
-                CONTACT
-              </a>
+              <a href="#">CONTACT</a>
             </li>
           </ul>
         </nav>
 
         <div className="flex w-full max-w-xs flex-col items-center gap-4">
-          <span className="text-3xl font-bold">MENDRO</span>
+          <span className="text-lg font-bold xl:text-3xl">MENDRO</span>
 
           <input
             type="email"

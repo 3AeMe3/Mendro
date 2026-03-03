@@ -42,8 +42,10 @@ function App() {
   return (
     <div className="smooth-wrapper">
       <LoadingCtx value={{ isLoaded, setIsLoaded }} className="smooth-content relative">
+
         <Navbar />
         <div className="smooth-content relative">
+          
           <FadingPage />
           <Hero />
           <AboutUs />

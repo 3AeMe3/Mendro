@@ -34,7 +34,7 @@ export default function Hero() {
         ease: 'power4.out',
         stagger: 0.05,
       })
-      .from('#wear', {
+      .from('#wear-wrapper', {
         y: 150,
         opacity: 0,
         duration: 0.5,
@@ -43,25 +43,30 @@ export default function Hero() {
   }, [isLoaded]);
 
   return (
-    <section>
+    <section id="home" className=" w-full  flex items-center lg:block  ">
       {isLoaded && (
-        <div className="h-full w-full">
-          <div className="relative grid h-full grid-rows-2 xl:grid-cols-3 xl:grid-rows-none xl:items-center xl:justify-around xl:gap-3 xl:px-10">
-            <div className="mt-20">
-              <h1
-                id="title-hero"
-                className="text-center text-5xl font-semibold xl:w-xl xl:scale-y-115 xl:text-left xl:text-8xl xl:leading-21 xl:font-extrabold xl:-tracking-[0.3rem]"
-              >
-                digital fashion is a new chapter
-              </h1>
-            </div>
-            <div className="absolute top-1/2 left-1/2 z-10 row-start-2 h-[80%] w-[80%] -translate-x-1/2 -translate-y-1/2 transform xl:col-start-2 xl:col-end-3 xl:row-start-1 xl:h-[80%] xl:w-[125%]">
-              {<Wear id={'wear'} />}
-            </div>
-            <div className="xl:col-start-3 xl:mx-auto xl:w-60 xl:gap-10">
-              <span id="short-text" className="hidden font-semibold xl:block">
-                We Merge the digital possiblities and the needs of fashion brands to create
-              </span>
+        <div className="relative mx-auto max-h-3/4  max-w-sm md:max-w-2xl lg:max-w-7xl  flex h-full flex-col items-center justify-center gap-10 lg:grid lg:grid-cols-3 lg:items-center lg:gap-2 lg:max-h-full">
+          <h1
+            id="title-hero"
+            className="text-center text-5xl md:text-6xl leading-tight font-semibold lg:text-8xl lg:text-left lg:leading-21 lg:font-extrabold lg:-tracking-[0.3rem]"
+          >
+            digital fashion is a new chapter
+          </h1>
+          <div
+            id="wear-wrapper"
+            className="relative h-full max-h-[50%] mx-auto w-full  md:max-h-120  lg:max-h-2/4 lg:h-full   "
+          >
+            {<Wear />}
+          </div>
+          <div className=" w-full  flex-col  flex">
+            <div
+              className=" hidden text-center text-sm font-medium text-neutral-600 sm:text-base lg:block lg:max-w-xs lg:text-left lg:text-lg lg:font-semibold"
+              id="short-text"
+            >
+              <p >
+
+              We Merge the digital possiblities and the needs of fashion brands to create
+              </p>
             </div>
           </div>
         </div>

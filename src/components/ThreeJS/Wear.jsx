@@ -7,9 +7,9 @@ function WearModel() {
   return <primitive object={scene} scale={6.5} position={[0, -7, 0]} />;
 }
 
-export default function Wear(props) {
+export default function Wear() {
   return (
-    <Canvas camera={{ position: [0, 0, 5] }} {...props}>
+    <Canvas camera={{ position: [0, 0, 5] }}>
       <ambientLight intensity={0.5} />
       <directionalLight position={[5, 5, 5]} />
       <WearModel />

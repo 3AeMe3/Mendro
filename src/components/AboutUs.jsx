@@ -7,25 +7,15 @@ import { useGSAP } from '@gsap/react';
 import { SplitText } from 'gsap/all';
 
 import clothingImg from '/Clothing.webp';
+import { Timeline } from 'gsap/gsap-core.js';
 
 export default function AboutUs() {
   const iconRef = useRef(null);
+  const mendroRef = useRef(null);
 
   useGSAP(() => {
     let titleSplit = SplitText.create('#title-aboutUs', { type: 'words,chars' });
-
-    gsap.from(titleSplit.words, {
-      y: 100,
-      ease: 'power1',
-      stagger: 0.05,
-      opacity: 0,
-      duration: 0.5,
-      scrollTrigger: {
-        trigger: '#title-aboutUs',
-        toggleActions: 'play none none none',
-        start: 'top 75%',
-      },
-    });
+    let mendroSplit = SplitText.create(mendroRef.current, { type: 'words' });
 
     gsap.from(iconRef.current, {
       y: -35,
@@ -40,53 +30,73 @@ export default function AboutUs() {
       },
     });
 
-    gsap.from('#subtitle span', {
-      y: 50,
+    gsap.from(titleSplit.words, {
+      y: 100,
+      ease: 'power1',
+      stagger: 0.05,
       opacity: 0,
-      duration: 1,
-      ease: 'power2.out',
-      stagger: 0.3,
+      duration: 0.4,
       scrollTrigger: {
-        trigger: '#subtitle',
-        start: 'top 65%',
-        toggleActions: 'play none none none',
+        trigger: '#title-aboutUs',
+        start: 'top 75%',
+      },
+    });
+
+    gsap.from(mendroSplit.words, {
+      y: 50,
+      ease: 'power1.in',
+      stagger: 0.1,
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: mendroRef.current,
+        start: 'top 85%',
       },
     });
 
     // Limpieza (muy importante)
-    return () => titleSplit.revert();
+    return () => {
+      titleSplit.revert();
+      mendroSplit.revert();
+    };
   }, []);
 
   return (
-    <section className="flex-center flex flex-col">
-      <div className="flex flex-col items-center gap-4 xl:flex-row xl:gap-30">
-        <div className="flex-center flex flex-col xl:w-2/3 xl:gap-10">
-          <div>
-            <CircleArrowDown
-              ref={iconRef}
-              absoluteStrokeWidth
-              className="hidden size-10 xl:m-auto xl:block"
-            />
-            <span className="text-lg font-semibold">About Mendro</span>
-          </div>
-
-          <h2
-            id="title-aboutUs"
-            className="text-center text-xl font-normal -tracking-tight md:w-3/4 xl:text-4xl"
+    <section
+      id="about"
+      className="flex w-full flex-col items-center justify-center gap-10 sm:py-20 xl:flex-row"
+    >
+      <div className="flex w-full flex-col items-center gap-4 text-center md:text-left xl:items-start">
+        <div>
+          <CircleArrowDown
+            ref={iconRef}
+            absoluteStrokeWidth
+            className="hidden size-10 md:m-auto md:block"
+          />
+          <span
+            ref={mendroRef}
+            className="text-sm font-semibold tracking-wide text-neutral-600 uppercase sm:text-base md:text-lg md:tracking-normal md:text-neutral-900"
           >
-            we created digital clothes that exist only in the digital world and all that we used to
-            do so is our creativity and the digital cloths.
-          </h2>
+            About Mendro
+          </span>
         </div>
 
-        <img
-          src={clothingImg}
-          loading="lazy"
-          alt="A person walking wearing mendro clothing"
-          draggable="false"
-          className="w-[80%] basis-1/4 xl:w-80"
-        />
+        <h2
+          id="title-aboutUs"
+          className="text-md max-w-2xl text-center leading-snug font-normal -tracking-tight sm:text-xl md:text-left md:text-3xl xl:text-4xl"
+        >
+          we created digital clothes that exist only in the digital world and all that we used to do
+          so is our creativity and the digital cloths.
+        </h2>
       </div>
+
+      <img
+        src={clothingImg}
+        loading="lazy"
+        alt="A person walking wearing mendro clothing"
+        draggable="false"
+        className="w-full max-w-70 sm:max-w-sm"
+      />
     </section>
   );
 }
