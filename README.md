@@ -1,16 +1,66 @@
-# React + Vite
+# 🌐 Landing Page Animada con React, GSAP y Three.js
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una landing page interactiva desarrollada para explorar la integración de **animaciones avanzadas**, **renderizado 3D** y **diseño responsive moderno** utilizando React y herramientas del ecosistema frontend actual.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Objetivo del proyecto
 
-## React Compiler
+El propósito principal fue profundizar en la creación de interfaces modernas combinando animaciones y gráficos 3D en un entorno React, enfocándome en:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Integración de animaciones complejas usando GSAP dentro del ciclo de vida de React.
+* Implementación de escenas 3D en la web mediante Three.js y React Three Fiber.
+* Construcción de un diseño responsive utilizando Tailwind CSS.
+* Organización y optimización del rendimiento en una landing animada.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Stack Tecnológico
+
+* **React** – Biblioteca para la construcción de interfaces de usuario.
+* **Vite** – Herramienta de desarrollo y bundler moderno.
+* **Tailwind CSS** – Framework CSS utilitario para diseño responsive.
+* **GSAP** – Librería de animaciones de alto rendimiento.
+* **Three.js** – Motor gráfico 3D basado en WebGL.
+* **React Three Fiber** – Renderer de Three.js para React.
+* **Drei** – Utilidades y helpers para React Three Fiber.
+
+---
+
+## 📚 Lo que aprendí
+
+* Cómo integrar correctamente **GSAP con React**, evitando conflictos con el renderizado y el ciclo de vida de componentes.
+* Manejo de animaciones sincronizadas con el scroll utilizando ScrollTrigger.
+* Integración de contenido 3D dentro de una aplicación React usando React Three Fiber.
+* Organización de componentes animados manteniendo escalabilidad y legibilidad del código.
+* Creación de layouts responsive modernos con Tailwind CSS.
+
+---
+
+## 🧩 Retos encontrados
+
+* Manejo del estado y el ciclo de vida al combinar animaciones imperativas (GSAP) con React.
+* Evitar problemas de rendimiento al mezclar animaciones y renderizado 3D.
+* Coordinación entre animaciones de scroll y escenas 3D.
+
+---
+
+## 🔗 Demo
+
+El proyecto está desplegado en **Netlify**:
+👉 https://m3ndro.netlify.app
+
+---
+
+## 🖼️ Screenshots
+
+![Screenshot del proyecto](./public/screenshot.png)
+
+---
+
+## 📌 Próximos pasos
+
+* Mejorar accesibilidad (a11y) en elementos animados.
+* Optimizar performance en dispositivos móviles.
+* Implementar modo oscuro con Tailwind CSS.
+* Añadir transiciones de página más avanzadas.
