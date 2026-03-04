@@ -15,7 +15,6 @@ export default function Clothing() {
         scrollTrigger: {
           trigger: img,
           pin: true,
-          markers: true,
           start: 'top 10%',
           pinSpacing: false,
           endTrigger: '#container',
