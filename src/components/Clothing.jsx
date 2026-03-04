@@ -26,14 +26,14 @@ export default function Clothing() {
   }, []);
 
   return (
-    <section id="container" className="h-[120vh] xl:h-[250vh]">
-      <div className="hidden h-full flex-col items-center justify-between gap-15 xl:flex xl:justify-between">
-        <div className="image">
+    <section id="container" className=" xl:h-[250vh]   h-full my-5">
+      <div className=" hidden h-full flex-col items-center justify-between gap-15 lg:grid lg:grid-cols-3   lg:justify-between">
+        <div className="image   col-start-2">
           <img
             src={mainClothingImg}
             loading="lazy"
             alt="a young man wearing casual mendro clothing"
-            className="clothing-image w-40 xl:w-120"
+            className="clothing-image  "
           />
           <div className="text-section text-md mt-5 font-semibold uppercase">
             <p>Social, influence, commerce -</p>
@@ -42,20 +42,20 @@ export default function Clothing() {
             <Button className={'mt-4'}>Shop Now</Button>
           </div>
         </div>
-        <div className="image xl:self-start">
+        <div className="image xl:self-start col-start-1">
           <img
             src={clothingDarkImg}
             loading="lazy"
             alt="a couple wearing mendro clothing"
-            className="clothing-image w-40 xl:w-90"
+            className="clothing-image "
           />
         </div>
-        <div className="image py-100 xl:self-end">
+        <div className="image py-100 xl:self-end  col-start-3">
           <img
             src={clothingStackImg}
             loading="lazy"
             alt="a stack of mendro clothing"
-            className="clothing-image w-40 xl:w-100 xl:self-end"
+            className="clothing-image xl:self-end"
           />
         </div>
       </div>

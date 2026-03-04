@@ -8,6 +8,7 @@ h3 {
 }
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: #f2edeb
 }
 @layer components {
   .title {
@@ -20,7 +21,7 @@ body {
     user-select: none;
   }
   section {
-    @apply h-screen w-full bg-[#f2edeb] px-5 py-5 xl:px-25 xl:py-20;
+    @apply h-screen w-full  px-5 py-5 md:max-w-lg  mx-auto lg:max-w-4xl 2xl:max-w-7xl ;
   }
   body {
     color: #221f20;

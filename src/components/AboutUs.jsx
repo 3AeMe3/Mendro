@@ -64,7 +64,7 @@ export default function AboutUs() {
   return (
     <section
       id="about"
-      className="flex w-full flex-col items-center justify-center gap-10 sm:py-20 xl:flex-row"
+      className="flex w-full   flex-col items-center justify-center gap-10 sm:py-20 xl:flex-row"
     >
       <div className="flex w-full flex-col items-center gap-4 text-center md:text-left xl:items-start">
         <div>

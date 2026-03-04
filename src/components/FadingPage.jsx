@@ -1,11 +1,11 @@
 import { useContext } from 'react';
 import { LoadingCtx } from './Loading/LoadingContext';
 
-import { gsap } from 'gsap/all';
+import { gsap} from 'gsap/all';
 import { useGSAP } from '@gsap/react';
-
 export default function FadingPage() {
   const { isLoaded, setIsLoaded } = useContext(LoadingCtx);
+
 
   useGSAP(() => {
     gsap.fromTo(

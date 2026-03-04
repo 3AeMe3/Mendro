@@ -43,24 +43,24 @@ export default function Hero() {
   }, [isLoaded]);
 
   return (
-    <section id="home" className=" w-full  flex items-center lg:block  ">
+    <section id="home" className="w-full flex items-center  lg:block  ">
       {isLoaded && (
-        <div className="relative mx-auto max-h-3/4  max-w-sm md:max-w-2xl lg:max-w-7xl  flex h-full flex-col items-center justify-center gap-10 lg:grid lg:grid-cols-3 lg:items-center lg:gap-2 lg:max-h-full">
+        <div className="relative mx-auto max-h-3/4 w-full  max-w-xl md:max-w-2xl lg:max-w-7xl  flex h-full flex-col items-center justify-center gap-10 lg:grid lg:grid-cols-3 lg:items-center lg:gap-6 lg:max-h-full">
           <h1
             id="title-hero"
-            className="text-center text-5xl md:text-6xl leading-tight font-semibold lg:text-8xl lg:text-left lg:leading-21 lg:font-extrabold lg:-tracking-[0.3rem]"
+            className="text-center text-4xl md:text-6xl leading-tight  lg:leading-15 lg:text-6xl 2xl:text-8xl lg:text-left 2xl:leading-21 font-extrabold 2xl:-tracking-[0.3rem]"
           >
             digital fashion is a new chapter
           </h1>
           <div
             id="wear-wrapper"
-            className="relative h-full max-h-[50%] mx-auto w-full  md:max-h-120  lg:max-h-2/4 lg:h-full   "
+            className="relative h-full max-h-[50%] mx-auto w-full  md:max-h-120   lg:max-h-2/5  lg:h-full   "
           >
             {<Wear />}
           </div>
           <div className=" w-full  flex-col  flex">
             <div
-              className=" hidden text-center text-sm font-medium text-neutral-600 sm:text-base lg:block lg:max-w-xs lg:text-left lg:text-lg lg:font-semibold"
+              className=" hidden text-center text-sm font-medium text-neutral-600 sm:text-base lg:block lg:max-w-xs lg:text-center lg:text-lg lg:font-semibold"
               id="short-text"
             >
               <p >

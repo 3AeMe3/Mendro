@@ -1,4 +1,6 @@
-import { useState } from 'react';
+
+import { useGSAP } from '@gsap/react';
+import { useState,useEffect } from 'react';
 import { LoadingCtx } from './components/Loading/LoadingContext';
 
 import Navbar from './components/Navbar';
@@ -8,12 +10,8 @@ import Clothing from './components/Clothing';
 import Footer from './components/Footer';
 import FadingPage from './components/FadingPage';
 
-import { gsap } from 'gsap';
-import { ScrollTrigger, SplitText, ScrollSmoother } from 'gsap/all';
-import { useGSAP } from '@gsap/react';
+import {ScrollSmoother} from "./lib/gsap.js"
 import WeAre from './components/WeAre';
-import { useEffect } from 'react';
-gsap.registerPlugin(ScrollTrigger, SplitText, ScrollSmoother);
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -30,6 +28,7 @@ function App() {
   useEffect(() => {
     const handleBeforeUnload = () => {
       window.scrollTo(0, 0);
+      
     };
 
     window.addEventListener('beforeunload', handleBeforeUnload);
@@ -38,14 +37,11 @@ function App() {
       window.removeEventListener('beforeunload', handleBeforeUnload);
     };
   }, []);
-
-  return (
-    <div className="smooth-wrapper">
-      <LoadingCtx value={{ isLoaded, setIsLoaded }} className="smooth-content relative">
-
+   return (
+    <div className="smooth-wrapper ">
+      <LoadingCtx value={{ isLoaded, setIsLoaded }} className="smooth-content relative ">
         <Navbar />
-        <div className="smooth-content relative">
-          
+        <div className={`smooth-content relative `}>
           <FadingPage />
           <Hero />
           <AboutUs />
